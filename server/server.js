@@ -14,7 +14,14 @@ let calculations = [ {
   numTwo: 5,
   operator: '+',
   result: 8
-},]
+},
+{
+  numOne: 11,
+  numTwo: 7,
+  operator: '-',
+  result: 4
+}
+]
 
 
 // Here's a wonderful place to make some routes:
