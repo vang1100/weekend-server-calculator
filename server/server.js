@@ -36,6 +36,16 @@ app.get('/calculations', function(req, res) {
 
 // POST /calculations
 
+app.post('/calculations', (req, res) => {
+  console.log('n POST');
+
+  let newCalc = req.body;
+
+  calculations.push(newCalc);
+
+  res.sendStatus(201);
+})
+
 
 
 

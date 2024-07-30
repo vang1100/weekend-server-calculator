@@ -9,7 +9,7 @@
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
+    <form data-testid="calculator" onSubmit="submitCalculations(event)">
       <input data-testid="numOne" placeholder="First Number">
       <button>+</button>
       <button>-</button>
@@ -21,10 +21,12 @@
     </form>
 
     <section data-testid="recentResult">
+      <h3>Recent Result</h3>
       <!-- The most recent calculation result goes here. -->
     </section>
 
     <section data-testid="resultHistory" id="history">
+      <h3>History</h3>
       <!-- The list of calculation results goes here. -->
     </section>
   </body>
