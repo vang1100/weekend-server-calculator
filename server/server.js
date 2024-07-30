@@ -37,7 +37,29 @@ app.get('/calculations', function(req, res) {
 // POST /calculations
 
 app.post('/calculations', (req, res) => {
-  console.log('n POST');
+  console.log('in POST');
+
+  let result = 0
+  let operator = '';
+
+for (let items of calculations) {
+  if ( items.operator === '+' ) {
+      result = items.numOne + items.numTwo;
+  }
+  else if (operator === '-') {
+      result = items.numOne - items.numTwo;
+  }
+  else if (operator === '*') {
+      result = items.numOne * items.numTwo;
+  } else if ( operator === '-') {
+      result = items.numOne - items.numTwo;
+  } else {
+      console.log('something went wrong');
+  }
+
+  return result;
+
+}
 
   let newCalc = req.body;
 

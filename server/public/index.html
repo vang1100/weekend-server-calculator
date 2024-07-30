@@ -11,12 +11,12 @@
 
     <form data-testid="calculator" onSubmit="submitCalculations(event)">
       <input data-testid="numOne" placeholder="First Number">
-      <button>+</button>
+      <button id="+">+</button>
       <button>-</button>
       <button>*</button>
       <button>/</button>
       <input data-testid="numTwo" placeholder="Second Number">
-      <button>=</button>
+      <button onclick="submitCalculations(event)">=</button>
       <button>C</button>
     </form>
 

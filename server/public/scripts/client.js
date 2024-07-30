@@ -11,6 +11,8 @@ function getCalculations(){
         //console.log(response);
         console.log('grabbing the data', response.data);
 
+        renderHistory(response.data);
+
     }).catch(error => {
         console.log('Axios GET failed, unable to load calculations array', error);
     })
@@ -25,64 +27,35 @@ function submitCalculations(event){
     event.preventDefault();
     console.log('test');
 
-    let numOne = document.querySelector('#numOne').value;
-    let numTwo = document.querySelector('#numTwo').value;
-    console.log('inputs', numOne, numTwo);
+//     let numOne = document.querySelector('#numOne').value;
+//     let numTwo = document.querySelector('#numTwo').value;
+//     console.log('inputs', numOne, numTwo);
 
-    let operator = '';
-    let result = 0;
+// //     let operator = '';
+// //     let result = 0;
 
-    let calcToAdd = {
-    numOne: numOne,
-    numTwo: numTwo,
-    operator: operator,
-    result: result
-   }
+//     let calcToAdd = {
+//     numOne: numOne,
+//     numTwo: numTwo,
+//     operator: operator,
+  
+//    }
 
 
-axios.post('/calculations', calcToAdd).then(response =>{
-    console.log('Did POST work?', response);
+// axios.post('/calculations', calcToAdd).then(response =>{
+//     console.log('Did POST work?', response);
 
-   console.log(math('math data', response.data));
-   document.querySelector('#numOne').value = '';
-    document.querySelector('#numTwo').value = '';
-}).catch(error => {
-    console.log('error in post /calculations', error);
-    alert('something went wrong in POST');
-})
+//    console.log(math('math data', response.data));
+//    document.querySelector('#numOne').value = '';
+//     document.querySelector('#numTwo').value = '';
+// }).catch(error => {
+//     console.log('error in post /calculations', error);
+//     alert('something went wrong in POST');
+// })
+// }
 }
 
 
-
-function math(calculations) {
-   
-    let result = 0
-    let operator = '';
-
-for (let items of calculations) {
-    if ( items.operator === '+' ) {
-        result = items.numOne + items.numTwo;
-    }
-    else if (operator === '-') {
-        result = items.numOne - items.numTwo;
-    }
-    else if (operator === '*') {
-        result = items.numOne * items.numTwo;
-    } else if ( operator === '-') {
-        result = items.numOne - items.numTwo;
-    } else {
-        console.log('something went wrong');
-    }
-
-    return result;
-}
-} 
-
- //console.log(math(1, '+', 2));
-// console.log(math('-', 1,2));
-// console.log(math('*', 1,2));
-
-//add();
 
 
 function renderHistory(calculations){
